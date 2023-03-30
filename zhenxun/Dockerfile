@@ -1,6 +1,10 @@
 FROM bitnami/git as Git-Clone
 WORKDIR /usr/local/code
 RUN git clone https://github.com/HibiKier/zhenxun_bot.git
+WORKDIR /usr/local/code/zhenxun_bot/plugins/
+RUN git clone https://github.com/tjchanming/zhenxun_bot_azure_openai.git
+COPY --from=Git-Clone zhenxun_bot_azure_openai/chatgpt ./
+RUN rm -rf zhenxun_bot_azure_openai
 
 ###############################################################################
 
