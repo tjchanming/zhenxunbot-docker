@@ -18,7 +18,7 @@ services:
     go-cqhttp:
         container_name: Go-cqhttp
         restart: on-failure
-        image: jyishit/go-cqhttp
+        image: zhiweiyu/go-cqhttp
         links:
             - zhenxun
         depends_on:
